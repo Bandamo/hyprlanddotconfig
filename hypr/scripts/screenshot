@@ -1,0 +1,12 @@
+#!/bin/bash
+
+FILENAME=$HOME$(date '+/Pictures/Screenshot/%Y_%m_%d-%kh%Mm%Ss.png')
+
+if [ "$1" == "cut" ];then
+    grim -g "$(slurp)" $FILENAME
+else
+    grim $FILENAME
+fi
+
+xclip -selection clipboard -t image/png -i $FILENAME
+
