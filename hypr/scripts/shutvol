@@ -12,5 +12,3 @@ else
 	wpctl set-volume @DEFAULT_AUDIO_SINK@ 0
 
 fi
-
-	
