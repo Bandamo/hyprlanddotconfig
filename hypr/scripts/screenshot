@@ -1,6 +1,7 @@
 #!/bin/bash
 
 FILENAME=$HOME$(date '+/Pictures/Screenshot/%Y_%m_%d-%kh%Mm%Ss.png')
+FILENAME=$(echo $FILENAME | sed 's/\ //g')
 
 if [ "$1" == "cut" ];then
     grim -g "$(slurp)" $FILENAME
