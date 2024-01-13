@@ -55,7 +55,7 @@
 	
 	"custom/network":{
 		"exec":"~/.config/waybar/scripts/network",
-		"on-click":"touch /tmp/data_rate_clicked",
+		"on-click":"~/.config/waybar/scripts/wifimenu.sh",
 		"min-length":22
 	},
 
