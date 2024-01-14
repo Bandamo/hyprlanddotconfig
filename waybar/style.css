@@ -1,9 +1,9 @@
 * {
     border: none;
-    border-radius: 0px;
-    font-family: "JetBrainsMono Nerd Font";
+    border-color: #2B5D34;
+    font-family: "JetBrainsMono NF ExtraLight";
     font-weight: bold;
-    font-size: 11px;
+    font-size: 12px;
     min-height: 0;
     transition: 0.3s;
 }
@@ -22,36 +22,6 @@ tooltip {
     transition: 0.3s;
 }
 
-#workspaces button {
-    padding: 5px;
-    color: #313244;
-    margin-right: 5px;
-}
-
-#workspaces button.active {
-    color: #a6adc8;
-}
-
-#workspaces button.focused {
-    color: #a6adc8;
-    background: #eba0ac;
-    border-radius: 20px;
-}
-
-#workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
-    border-radius: 20px;
-}
-
-#workspaces button:hover {
-    background: #11111b;
-    color: #cdd6f4;
-    border-radius: 20px;
-}
-
-#custom-power_profile,
-#custom-weather,
 #window,
 #clock,
 #battery,
@@ -61,28 +31,75 @@ tooltip {
 #temperature,
 #workspaces,
 #tray,
-#custom-network,
 #custom-cpufreq,
+#group-group-power,
+#custom-quit,
+#custom-lock,
+#custom-power,
+#custom-reboot,
 #backlight {
     background: #1e1e2e;
     opacity: 0.8;
     padding: 0px 10px;
     margin: 0;
     margin-top: 5px;
-    border: 1px solid #181825;
+    border: 1px solid #606060;
+}
+
+#custom-power{
+    color: #ff0000;
+    font-size: 15px;
+    padding-right: 13px;
+    border-radius: 0px 20px 20px 0px;
+    border-left: 0px;
+}
+
+#custom-reboot{
+    color: #00ff00;
+    font-size: 15px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#custom-lock{
+    color: #ffff00;
+    font-size: 15px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#custom-quit{
+    color: #00ffff;
+    font-size: 15px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.powerclass{
+    color: #c29f2e;
 }
 
 #temperature {
-    border-radius: 20px 0px 0px 20px;
+    color: #c29f2e;
+    border-right: 0px;
+    border-left: 0px;
 }
 
 #temperature.critical {
-    color: #eba0ac;
+    color: #d20929;
 }
 
 #backlight {
-    border-radius: 20px 0px 0px 20px;
-    padding-left: 7px;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+#backlight.dark {
+    color: #707070;
+}
+
+#backlight.medium {
+    color: #aaaaaa;
 }
 
 #tray {
@@ -99,12 +116,6 @@ tooltip {
     padding-left: 5px;
 }
 
-#custom-power_profile {
-    color: #a6e3a1;
-    border-left: 0px;
-    border-right: 0px;
-}
-
 #window {
     border-radius: 20px;
     margin-left: 5px;
@@ -113,61 +124,29 @@ tooltip {
 
 #clock {
     color: #fab387;
-    border-radius: 20px;
-    margin-left: 5px;
-    border-right: 0px;
     transition: 0.3s;
-    padding-left: 7px;
+    border-right: 0px;
+    border-left: 0px;
 }
 
 #network {
     color: #f9e2af;
     border-radius: 20px 0px 0px 20px;
-    border-left: 0px;
     border-right: 0px;
-}
-
-#bluetooth {
-    color: #89b4fa;
-    border-radius: 20px;
-    margin-right: 10px
-} 
-
-#pulseaudio {
-    color: #89b4fa;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#pulseaudio.microphone {
-    color: #cba6f7;
-    border-left: 0px;
-    border-right: 0px;
-    border-radius: 0px 20px 20px 0px;
-    margin-right: 5px;
-    padding-right: 8px;
 }
 
 #wireplumber {
     color: #a6e3a1;
-    border-radius: 0 20px 20px 0;
-    margin-right: 5px;
+    border-right: 0px;
     border-left: 0px;
-}
-
-#custom-network{
-	color: #a6e3a1;
-    border-radius: 0 20px 20px 0;
-    margin-right: 5px;
-    border-left: 0px;
-	/*font-size: 13px;*/
 }
 
 #custom-cpufreq{
-	color: #33d6ff;
-    border-radius: 20px 20px 20px 20px;
-    margin-right: 5px;
-	/*font-size: 13px;*/
+    color: #33d6ff;
+    border-radius: 0px 0px 0px 0px;
+    border-right: 0px;
+    border-left: 0px;
+    /*font-size: 13px;*/
 }
 
 #battery {
@@ -177,8 +156,55 @@ tooltip {
     border-left: 0px;
 }
 
-#custom-weather {
-    border-radius: 20px;
-    border-right: 0px;
-    margin-left: 0px;
+#battery.full {
+    color: #1caf14;
+}
+
+#battery.warning {
+    color: #c87500;
+}
+
+#battery.critical {
+    color: #9c0005;
+}
+
+#battery.ultracritical {
+    color: #9c0005;
+    animation: blink 10s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+      opacity: 0.1;
+    }
+    10% {
+      opacity: .5;
+    }
+    20% {
+      opacity: 1;
+    }
+    30% {
+      opacity: .5;
+    }
+    40% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: .5;
+    }
+    60% {
+      opacity: 1;
+    }
+    70% {
+      opacity: .5;
+    }
+    80% {
+      opacity: 0.1;
+    }
+    90% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+    }
 }
