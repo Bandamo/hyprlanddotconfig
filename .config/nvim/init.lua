@@ -220,6 +220,12 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  {
+    'github/copilot.vim',
+  },
+  {
+    'lambdalisue/askpass.vim',
+  },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -570,6 +576,9 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_enabled = false
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
