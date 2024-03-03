@@ -1,0 +1,24 @@
+[user]
+	email = thomas@tbonnefille.fr
+	name = Thomas Bonnefille
+	signingkey = 23B3C43A
+
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+[init]
+	defaultBranch = master
+[core]
+	editor = nvim
+[merge]
+	tool = vimdiff
+[commit]
+	gpgsign = true
+# define command which will be used when "nvim" is set as a merge tool
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+# set "nvim" as tool for merging
+[merge]
+  tool = nvim
+# automatically launch merge tool without displaying a prompt
+[mergetool]
+  prompt = false
