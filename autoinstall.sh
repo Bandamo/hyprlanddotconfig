@@ -30,4 +30,6 @@ yay -S --noconfirm ttf-nerd-fonts-symbols ttf-jetbrains-mono-nerd
 
 # Install utils
 echo -e "\e[1;32mInstalling utils\e[0m"
-yay -S --noconfirm minicom picocom htop neofetch firefox sshfs neovim tmux zsh oh-my-zsh-git openssh netcat nmap gnu-netcat vlc eog zathura zathura-pdf-mupdf thunar cmake make gcc gdb 
+yay -S --noconfirm minicom picocom htop neofetch firefox sshfs neovim tmux zsh oh-my-zsh-git openssh netcat nmap gnu-netcat vlc eog zathura zathura-pdf-mupdf thunar cmake make gcc gdb thunderbird
+
+echo -e "\e[1;32mEverything is done\e[0m"
