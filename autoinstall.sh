@@ -13,16 +13,13 @@ rm -rf yay
 # Install necessary packages
 
 echo -e "\e[1;32mInstalling necessary packages\e[0m"
-yay -S --noconfirm hyprland waybar rofi hyprpaper grim slurm kitty stow
+yay -S --noconfirm hyprland waybar walker-bin hyprpaper grim slurm kitty
 
 # Install the configuration files
 
 echo -e "\e[1;32mInstalling configuration files\e[0m"
-mkdir $HOME/.dotfiles
 mkdir $HOME/.config
-mv .config/* $HOME/.dotfiles/
-cd $HOME/.dotfiles
-stow .
+mv config $HOME/.config
 
 # Install the necessary fonts
 echo -e "\e[1;32mInstalling fonts\e[0m"
